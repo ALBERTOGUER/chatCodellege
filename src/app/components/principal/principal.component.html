@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+
+      <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="auth.logout()">Log
+        out</button>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <div id="chat-mensaje">
+        <ul class="list.group">
+            <div class="row" *ngFor="let mensaje of Mensajes">
+                <div class="col-12">
+                    <img [src]="mensaje.picture" style="width: 20px;" alt="">
+                </div>
+                <li class="lit-group-item" >{{mensaje.mensaje}}</li>
+            </div>
+        </ul>
+      </div>
+
+      <div>
+        <input type="text" #mensaje (keydown.enter)="sendmessage(mensaje.value)" class="form-control chat-input"
+          placeholder="Mensaje...">
+      </div>
+    </div>
+  </div>
+</div>
